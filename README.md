@@ -18,7 +18,7 @@ A Laravel package to detect how your application code is being executed. This pa
 ## Requirements
 
 - PHP 8.2 or higher
-- Laravel 10.x, 11.x, or 12.x
+- Laravel 11.x, or 12.x
 
 ## Installation
 
