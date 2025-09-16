@@ -4,7 +4,6 @@ namespace Develupers\Executed;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Develupers\Executed\Commands\ExecutedCommand;
 
 class ExecutedServiceProvider extends PackageServiceProvider
 {

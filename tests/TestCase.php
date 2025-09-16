@@ -2,9 +2,9 @@
 
 namespace Develupers\Executed\Tests;
 
+use Develupers\Executed\ExecutedServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Develupers\Executed\ExecutedServiceProvider;
 
 class TestCase extends Orchestra
 {

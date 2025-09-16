@@ -4,7 +4,6 @@ namespace Develupers\Executed;
 
 class Executed
 {
-
     /**
      * Check if currently running a standard PHP command.
      * Example: php -r "{code}" Laravel Extra Intellisense.
@@ -27,7 +26,7 @@ class Executed
      */
     public static function byComposerCommand(): bool
     {
-        return (isset($_SERVER['COMPOSER_BINARY']) && str_contains($_SERVER['COMPOSER_BINARY'], 'composer'));
+        return isset($_SERVER['COMPOSER_BINARY']) && str_contains($_SERVER['COMPOSER_BINARY'], 'composer');
     }
 
     /**
@@ -39,6 +38,7 @@ class Executed
             // Check if 'artisan' is the first argument
             return isset($_SERVER['argv'][0]) && $_SERVER['argv'][0] === 'artisan';
         }
+
         return false;
     }
 
@@ -55,12 +55,12 @@ class Executed
      */
     public static function checkArtisanCommand(string $command, ?string $name = null): bool
     {
-        if (!self::byArtisanCommand()) {
+        if (! self::byArtisanCommand()) {
             return false;
         }
 
         if ($name) {
-            return self::getArtisanCommand() === $command . ':' . $name;
+            return self::getArtisanCommand() === $command.':'.$name;
         }
 
         return str_starts_with(self::getArtisanCommand(), $command);
