@@ -98,7 +98,7 @@ describe('byComposerCommand', function () {
 
 describe('byArtisanCommand', function () {
     it('returns true when running artisan command in CLI', function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -107,7 +107,7 @@ describe('byArtisanCommand', function () {
     });
 
     it('returns false when not running artisan command', function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'phpunit';
@@ -116,7 +116,7 @@ describe('byArtisanCommand', function () {
     });
 
     it('returns false when argv is not set', function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         unset($_SERVER['argv']);
@@ -155,7 +155,7 @@ describe('getArtisanCommand', function () {
 
 describe('checkArtisanCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -202,7 +202,7 @@ describe('checkArtisanCommand', function () {
 
 describe('byPackageCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -229,7 +229,7 @@ describe('byPackageCommand', function () {
 
 describe('byCacheCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -261,7 +261,7 @@ describe('byCacheCommand', function () {
 
 describe('bySchedulerCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -288,7 +288,7 @@ describe('bySchedulerCommand', function () {
 
 describe('byHorizonCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -313,7 +313,7 @@ describe('byHorizonCommand', function () {
     });
 
     test('detects various horizon commands', function ($command) {
-        $_SERVER['argv'][1] = 'horizon:' . $command;
+        $_SERVER['argv'][1] = 'horizon:'.$command;
 
         expect(Executed::byHorizonCommand($command))->toBeTrue();
     })->with([
@@ -327,7 +327,7 @@ describe('byHorizonCommand', function () {
 
 describe('byQueueCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';
@@ -352,7 +352,7 @@ describe('byQueueCommand', function () {
     });
 
     test('detects various queue commands', function ($command) {
-        $_SERVER['argv'][1] = 'queue:' . $command;
+        $_SERVER['argv'][1] = 'queue:'.$command;
 
         expect(Executed::byQueueCommand($command))->toBeTrue();
     })->with([
@@ -367,7 +367,7 @@ describe('byQueueCommand', function () {
 
 describe('byMailCommand', function () {
     beforeEach(function () {
-        if (!defined('STDIN')) {
+        if (! defined('STDIN')) {
             define('STDIN', fopen('php://stdin', 'r'));
         }
         $_SERVER['argv'][0] = 'artisan';

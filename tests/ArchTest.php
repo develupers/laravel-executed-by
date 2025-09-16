@@ -1,6 +1,5 @@
 <?php
 
-use Develupers\Executed\Executed;
 use Develupers\Executed\ExecutedServiceProvider;
 use Develupers\Executed\Facades\Executed as ExecutedFacade;
 

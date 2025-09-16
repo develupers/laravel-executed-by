@@ -21,7 +21,7 @@ it('can call static methods through facade', function () {
     $_SERVER['argv'][0] = 'artisan';
     $_SERVER['argv'][1] = 'test:command';
 
-    if (!defined('STDIN')) {
+    if (! defined('STDIN')) {
         define('STDIN', fopen('php://stdin', 'r'));
     }
 
