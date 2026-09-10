@@ -22,13 +22,13 @@ A Laravel package to detect how your application code is being executed. This pa
 
 ## Installation
 
-You can install the package via composer:
+Install the package from [Packagist](https://packagist.org/packages/develupers/laravel-executed-by) by running this command in your Laravel application's root directory:
 
 ```bash
 composer require develupers/laravel-executed-by
 ```
 
-The package will automatically register its service provider and facade.
+Laravel automatically discovers the service provider and the `Executed` facade alias. No custom Composer repository, manual provider registration, configuration publishing, or database migrations are required.
 
 ## Usage
 
